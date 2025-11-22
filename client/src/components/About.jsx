@@ -3,23 +3,21 @@ import React, { useState } from 'react';
 const About = () => {
   const [showMore, setShowMore] = useState(false);
 
-  const bioText = `I'm **Mohd Ashif**, a passionate Full Stack MERN Developer who loves crafting clean, efficient, and scalable web applications. With a strong foundation in JavaScript, React, Node.js, and MongoDB, I aim to turn ideas into functional, user-friendly digital products.
+  const bioParagraph1 = `I'm **Mohd Ashif**, a passionate Full Stack MERN Developer who loves crafting clean, efficient, and scalable web applications. With a strong foundation in JavaScript, React, Node.js, and MongoDB, I aim to turn ideas into functional, user-friendly digital products.`;
 
-I enjoy solving problems and continuously learning new technologies to stay ahead in the ever-evolving tech world. My goal is to create web experiences that are not only visually appealing but also highly performant and accessible.`;
+  const bioParagraph2 = `I enjoy solving problems and continuously learning new technologies to stay ahead in the ever-evolving tech world. My goal is to create web experiences that are not only visually appealing but also highly performant and accessible.`;
 
   return (
     <section
       id="about"
-      className="py-5"
+      className="py-5 unified-bg section-spacing"
       style={{
-        background:
-          'linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%)',
         position: 'relative',
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        paddingTop: '100px',
-        paddingBottom: '100px',
+        paddingTop: '10rem',
+        paddingBottom: '10rem',
       }}
     >
       {/* Subtle diagonal lines pattern */}
@@ -45,6 +43,7 @@ I enjoy solving problems and continuously learning new technologies to stay ahea
             fontSize: '3rem',
             color: 'white',
             fontWeight: 800,
+            marginBottom: '2.5rem',
           }}
         >
           <span className="text-white">About </span>
@@ -120,15 +119,16 @@ I enjoy solving problems and continuously learning new technologies to stay ahea
                 position: 'relative',
               }}
             >
+              {/* First Paragraph */}
               <div
                 style={{
                   color: 'white',
                   fontSize: '1.1rem',
                   lineHeight: '1.8',
-                  marginBottom: '30px',
+                  marginBottom: '1.2rem',
                 }}
               >
-                {bioText.split('**').map((part, index) => {
+                {bioParagraph1.split('**').map((part, index) => {
                   if (index % 2 === 1) {
                     // This is the bold/highlighted part (Mohd Ashif)
                     return (
@@ -145,6 +145,19 @@ I enjoy solving problems and continuously learning new technologies to stay ahea
                   }
                   return <span key={index}>{part}</span>;
                 })}
+              </div>
+
+              {/* Second Paragraph */}
+              <div
+                style={{
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  lineHeight: '1.8',
+                  marginTop: '1.2rem',
+                  marginBottom: '30px',
+                }}
+              >
+                {bioParagraph2}
               </div>
 
               <a

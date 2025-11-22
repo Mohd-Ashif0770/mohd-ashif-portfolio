@@ -31,12 +31,11 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-5"
+      className="py-5 unified-bg section-spacing"
       style={{
-        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
         position: 'relative',
-        paddingTop: '100px',
-        paddingBottom: '100px',
+        paddingTop: '10rem',
+        paddingBottom: '10rem',
       }}
     >
       <div className="container">
@@ -48,6 +47,10 @@ const Education = () => {
             position: 'relative',
             display: 'inline-block',
             width: '100%',
+            fontSize: 'clamp(2.4rem, 5vw, 3rem)',
+            fontWeight: 800,
+            letterSpacing: '-0.5px',
+            marginBottom: '2.5rem',
           }}
         >
           <span

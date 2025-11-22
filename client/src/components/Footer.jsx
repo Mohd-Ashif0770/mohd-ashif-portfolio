@@ -3,9 +3,8 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer
-      className="py-4"
+      className="py-4 unified-bg"
       style={{
-        background: 'linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%)',
         borderTop: '1px solid rgba(255, 255, 255, 0.1)',
       }}
     >

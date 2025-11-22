@@ -44,26 +44,27 @@ const Projects = () => {
     }
   };
 
-  // Define gradient colors for top borders (alternating pattern)
-  const getBorderGradient = (index) => {
-    // Teal-green for even indices (0, 2), purple for odd indices (1, 3)
-    if (index % 2 === 0) {
-      return 'linear-gradient(135deg, #00D9FF 0%, #00FF99 100%)';
-    } else {
-      return 'linear-gradient(135deg, #B026FF 0%, #FF6BFF 100%)';
-    }
+  // Define gradient colors for top borders matching Lovable design exactly
+  const getBorderGradient = (slug) => {
+    const gradients = {
+      'deltagpt-ai-chatbot': ['#A855F7', '#3B82F6'], // Purple → Blue
+      'wonderlust-hotel-booking-app': ['#2DD4BF', '#22D3EE'], // Cyan → Teal
+      'vyntra-video-call-app': ['#3B82F6', '#14B8A6'], // Blue → Aqua
+      'zerodha-clone': ['#EC4899', '#8B5CF6'], // Pink → Purple
+    };
+    
+    return gradients[slug] || ['#00D9FF', '#00FF99']; // Default gradient
   };
 
   return (
     <section
       id="projects"
-      className="py-5"
+      className="py-5 unified-bg section-spacing"
       style={{
-        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
         position: 'relative',
         minHeight: '100vh',
-        paddingTop: '100px',
-        paddingBottom: '100px',
+        paddingTop: '10rem',
+        paddingBottom: '10rem',
       }}
     >
       <div className="container">
@@ -73,12 +74,13 @@ const Projects = () => {
           style={{
             fontSize: '3rem',
             fontWeight: 800,
+            marginBottom: '2.5rem',
           }}
         >
           <span className="text-white">Featured </span>
           <span
             style={{
-              background: 'linear-gradient(135deg, #00D9FF 0%, #B026FF 100%)',
+              background: 'linear-gradient(135deg, #00D9FF 0%, #B026FF 50%, #FF6BFF 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -119,17 +121,17 @@ const Projects = () => {
           </div>
         ) : projects.length === 0 ? (
           <div className="text-center py-5">
-            <p style={{ color: '#B8C5D6', fontSize: '1.1rem' }}>
+            <p style={{ color: '#C8D1E0', fontSize: '1.1rem' }}>
               No projects available at the moment.
             </p>
           </div>
         ) : (
           <div className="row g-4">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <ProjectCard
                 key={project._id}
                 project={project}
-                borderGradient={getBorderGradient(index)}
+                gradientColors={getBorderGradient(project.slug)}
               />
             ))}
           </div>

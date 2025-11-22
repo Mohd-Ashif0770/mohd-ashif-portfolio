@@ -69,12 +69,11 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-5"
+      className="py-5 unified-bg section-spacing"
       style={{
-        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
         position: 'relative',
-        paddingTop: '100px',
-        paddingBottom: '100px',
+        paddingTop: '10rem',
+        paddingBottom: '10rem',
       }}
     >
       <div className="container">
@@ -84,6 +83,7 @@ const Contact = () => {
           style={{
             fontSize: '3rem',
             fontWeight: 800,
+            marginBottom: '2.5rem',
           }}
         >
           <span className="text-white">Let's </span>
@@ -106,12 +106,12 @@ const Contact = () => {
                 <div
                   className="card border-0 shadow-lg h-100"
                   style={{
-                    background: 'rgba(10, 10, 26, 0.8)',
+                    background: 'rgba(255, 255, 255, 0.03)',
                     backdropFilter: 'blur(10px)',
-                    borderRadius: '20px',
+                    borderRadius: '24px',
                     padding: '40px',
-                    border: '1px solid rgba(0, 217, 255, 0.3)',
-                    boxShadow: '0 0 30px rgba(0, 217, 255, 0.2), 0 4px 15px rgba(0, 0, 0, 0.3)',
+                    border: '1px solid rgba(0, 217, 255, 0.2)',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
                   }}
                 >
                   <form onSubmit={handleSubmit}>
@@ -330,21 +330,23 @@ const Contact = () => {
                     <div
                       className="mb-3 card border-0"
                       style={{
-                        background: 'rgba(10, 10, 26, 0.8)',
+                        background: 'rgba(255, 255, 255, 0.03)',
                         backdropFilter: 'blur(10px)',
-                        borderRadius: '15px',
+                        borderRadius: '20px',
                         padding: '20px',
-                        border: '1px solid rgba(0, 217, 255, 0.3)',
-                        boxShadow: '0 0 20px rgba(0, 217, 255, 0.15), 0 4px 15px rgba(0, 0, 0, 0.2)',
+                        border: '1px solid rgba(0, 217, 255, 0.2)',
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
                         transition: 'all 0.3s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-3px)';
-                        e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 217, 255, 0.3), 0 8px 20px rgba(0, 0, 0, 0.3)';
+                        e.currentTarget.style.transform = 'translateY(-4px)';
+                        e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 217, 255, 0.3), 0 4px 20px rgba(0, 0, 0, 0.5)';
+                        e.currentTarget.style.borderColor = 'rgba(0, 217, 255, 0.4)';
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = '0 0 20px rgba(0, 217, 255, 0.15), 0 4px 15px rgba(0, 0, 0, 0.2)';
+                        e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
+                        e.currentTarget.style.borderColor = 'rgba(0, 217, 255, 0.2)';
                       }}
                     >
                       <div className="d-flex align-items-center">
@@ -384,21 +386,23 @@ const Contact = () => {
                     <div
                       className="mb-3 card border-0"
                       style={{
-                        background: 'rgba(10, 10, 26, 0.8)',
+                        background: 'rgba(255, 255, 255, 0.03)',
                         backdropFilter: 'blur(10px)',
-                        borderRadius: '15px',
+                        borderRadius: '20px',
                         padding: '20px',
-                        border: '1px solid rgba(0, 153, 255, 0.3)',
-                        boxShadow: '0 0 20px rgba(0, 153, 255, 0.15), 0 4px 15px rgba(0, 0, 0, 0.2)',
+                        border: '1px solid rgba(0, 153, 255, 0.2)',
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
                         transition: 'all 0.3s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-3px)';
-                        e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 153, 255, 0.3), 0 8px 20px rgba(0, 0, 0, 0.3)';
+                        e.currentTarget.style.transform = 'translateY(-4px)';
+                        e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 153, 255, 0.3), 0 4px 20px rgba(0, 0, 0, 0.5)';
+                        e.currentTarget.style.borderColor = 'rgba(0, 153, 255, 0.4)';
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = '0 0 20px rgba(0, 153, 255, 0.15), 0 4px 15px rgba(0, 0, 0, 0.2)';
+                        e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
+                        e.currentTarget.style.borderColor = 'rgba(0, 153, 255, 0.2)';
                       }}
                     >
                       <div className="d-flex align-items-center">
@@ -440,21 +444,23 @@ const Contact = () => {
                     <div
                       className="mb-3 card border-0"
                       style={{
-                        background: 'rgba(10, 10, 26, 0.8)',
+                        background: 'rgba(255, 255, 255, 0.03)',
                         backdropFilter: 'blur(10px)',
-                        borderRadius: '15px',
+                        borderRadius: '20px',
                         padding: '20px',
-                        border: '1px solid rgba(176, 38, 255, 0.3)',
-                        boxShadow: '0 0 20px rgba(176, 38, 255, 0.15), 0 4px 15px rgba(0, 0, 0, 0.2)',
+                        border: '1px solid rgba(176, 38, 255, 0.2)',
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
                         transition: 'all 0.3s ease',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-3px)';
-                        e.currentTarget.style.boxShadow = '0 0 30px rgba(176, 38, 255, 0.3), 0 8px 20px rgba(0, 0, 0, 0.3)';
+                        e.currentTarget.style.transform = 'translateY(-4px)';
+                        e.currentTarget.style.boxShadow = '0 8px 30px rgba(176, 38, 255, 0.3), 0 4px 20px rgba(0, 0, 0, 0.5)';
+                        e.currentTarget.style.borderColor = 'rgba(176, 38, 255, 0.4)';
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = '0 0 20px rgba(176, 38, 255, 0.15), 0 4px 15px rgba(0, 0, 0, 0.2)';
+                        e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
+                        e.currentTarget.style.borderColor = 'rgba(176, 38, 255, 0.2)';
                       }}
                     >
                       <div className="d-flex align-items-center">
