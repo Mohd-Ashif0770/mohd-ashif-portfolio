@@ -10,14 +10,14 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-5 unified-bg section-spacing"
+      className="pt-5 unified-bg section-spacing"
       style={{
         position: 'relative',
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         paddingTop: '10rem',
-        paddingBottom: '10rem',
+        // paddingBottom: '0rem !important',
       }}
     >
       {/* Subtle diagonal lines pattern */}

@@ -76,7 +76,7 @@ const Contact = () => {
         paddingBottom: '10rem',
       }}
     >
-      <div className="container">
+      <div className="container-fluid">
         <h2
           className="text-center mb-5 fw-bold"
           data-aos="fade-up"
@@ -102,7 +102,7 @@ const Contact = () => {
           <div className="col-lg-8 mx-auto">
             <div className="row g-4">
               {/* Left Column - Contact Form */}
-              <div className="col-lg-6 mb-4" data-aos="fade-right">
+              <div className="col-lg-6 mb-4 " data-aos="fade-right">
                 <div
                   className="card border-0 shadow-lg h-100"
                   style={{
@@ -236,7 +236,7 @@ const Contact = () => {
                         className="form-control"
                         id="message"
                         name="message"
-                        rows="5"
+                        rows="3"
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Your Message"

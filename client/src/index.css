@@ -97,7 +97,7 @@ html {
 /* Section spacing - Desktop default */
 .section-spacing {
   padding-top: 10rem !important;
-  padding-bottom: 10rem !important;
+  padding-bottom: 5rem !important;
 }
 
 /* Responsive spacing for unified sections */
@@ -105,7 +105,7 @@ html {
   /* Tablet */
   .section-spacing {
     padding-top: 7rem !important;
-    padding-bottom: 7rem !important;
+    padding-bottom: 3.5rem !important;
   }
 }
 
@@ -113,6 +113,6 @@ html {
   /* Mobile */
   .section-spacing {
     padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
+    padding-bottom: 2.5rem !important;
   }
 }

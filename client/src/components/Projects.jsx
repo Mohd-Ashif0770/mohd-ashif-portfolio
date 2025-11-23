@@ -59,12 +59,12 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-5 unified-bg section-spacing"
+      className="pt-5 unified-bg section-spacing"
       style={{
         position: 'relative',
         minHeight: '100vh',
         paddingTop: '10rem',
-        paddingBottom: '10rem',
+        // paddingBottom: '10rem',
       }}
     >
       <div className="container">

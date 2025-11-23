@@ -31,11 +31,11 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-5 unified-bg section-spacing"
+      className="pt-5 unified-bg section-spacing"
       style={{
         position: 'relative',
         paddingTop: '10rem',
-        paddingBottom: '10rem',
+        // paddingBottom: '10rem',
       }}
     >
       <div className="container">
