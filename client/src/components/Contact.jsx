@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { contactAPI } from '../utils/apiService';
-import Toast from './Toast';
+import React, { useState, useEffect } from "react";
+import { contactAPI } from "../utils/apiService";
+import Toast from "./Toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    message: '',
+    name: "",
+    phone: "",
+    message: "",
   });
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState(null);
 
   // Add placeholder styles
   useEffect(() => {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       #name::placeholder,
       #phone::placeholder,
@@ -43,20 +43,59 @@ const Contact = () => {
     try {
       await contactAPI.submit(formData);
       setToast({
-        type: 'success',
-        message: 'Thank you for your message! I will get back to you soon.',
+        type: "success",
+        message: "Thank you for your message! I will get back to you soon.",
       });
       setFormData({
-        name: '',
-        phone: '',
-        message: '',
+        name: "",
+        phone: "",
+        message: "",
       });
     } catch (error) {
+      console.error("Contact form error:", error);
+      console.error("Error details:", {
+        message: error.message,
+        code: error.code,
+        response: error.response?.data,
+        status: error.response?.status,
+        config: {
+          url: error.config?.url,
+          baseURL: error.config?.baseURL,
+          method: error.config?.method,
+        },
+      });
+
+      let errorMessage = "Failed to send message. Please try again.";
+
+      if (error.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      } else if (error.response?.data?.errors) {
+        // Handle validation errors
+        const validationErrors = error.response.data.errors
+          .map((err) => err.msg)
+          .join(", ");
+        errorMessage = validationErrors;
+      } else if (error.code === "ECONNABORTED") {
+        errorMessage =
+          "Request timeout. Please check your connection and try again.";
+      } else if (
+        error.code === "ERR_NETWORK" ||
+        error.message === "Network Error"
+      ) {
+        errorMessage =
+          "Network error. Please check your connection and ensure the server is running.";
+      } else if (error.response?.status === 404) {
+        errorMessage =
+          "API endpoint not found. Please check server configuration.";
+      } else if (error.response?.status >= 500) {
+        errorMessage = "Server error. Please try again later.";
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+
       setToast({
-        type: 'error',
-        message:
-          error.response?.data?.message ||
-          'Failed to send message. Please try again.',
+        type: "error",
+        message: errorMessage,
       });
     } finally {
       setLoading(false);
@@ -66,11 +105,11 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-5 px-4 unified-bg section-spacing"
+      className="py-5 unified-bg section-spacing"
       style={{
-        position: 'relative',
-        paddingTop: '10rem',
-        paddingBottom: '10rem',
+        position: "relative",
+        paddingTop: "10rem",
+        paddingBottom: "10rem",
       }}
     >
       <div className="contact-section-wrapper">
@@ -78,18 +117,18 @@ const Contact = () => {
           className="text-center fw-bold"
           data-aos="fade-up"
           style={{
-            fontSize: '3rem',
+            fontSize: "3rem",
             fontWeight: 800,
-            marginBottom: '2rem',
+            marginBottom: "2rem",
           }}
         >
           <span className="text-white">Let's </span>
           <span
             style={{
-              background: 'linear-gradient(135deg, #00D9FF 0%, #B026FF 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              background: "linear-gradient(135deg, #00D9FF 0%, #B026FF 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
             }}
           >
             Connect
@@ -104,7 +143,7 @@ const Contact = () => {
                   <label
                     htmlFor="name"
                     className="form-label card-title"
-                    style={{ color: 'white', fontWeight: 600 }}
+                    style={{ color: "white", fontWeight: 600 }}
                   >
                     Name
                   </label>
@@ -133,7 +172,7 @@ const Contact = () => {
                   <label
                     htmlFor="phone"
                     className="form-label card-title"
-                    style={{ color: 'white', fontWeight: 600 }}
+                    style={{ color: "white", fontWeight: 600 }}
                   >
                     Mobile
                   </label>
@@ -151,7 +190,7 @@ const Contact = () => {
                   <label
                     htmlFor="message"
                     className="form-label card-title"
-                    style={{ color: 'white', fontWeight: 600 }}
+                    style={{ color: "white", fontWeight: 600 }}
                   >
                     Message
                   </label>
@@ -181,7 +220,7 @@ const Contact = () => {
                       Sending...
                     </>
                   ) : (
-                    'Send Message'
+                    "Send Message"
                   )}
                 </button>
               </form>
@@ -193,7 +232,8 @@ const Contact = () => {
             <div className="contact-card">
               <h4 className="get-in-touch-title">Get in Touch</h4>
               <p className="get-in-touch-text">
-                I'm always open to discussing new projects, creative ideas. Feel free to reach out!
+                I'm always open to discussing new projects, creative ideas. Feel
+                free to reach out!
               </p>
               <div className="contact-info">
                 {/* Email Card */}

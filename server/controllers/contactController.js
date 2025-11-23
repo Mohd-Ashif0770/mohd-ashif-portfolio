@@ -21,6 +21,8 @@ const sendEmailNotification = async (contactData) => {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+      connectionTimeout: 10000, // 10 seconds connection timeout
+      greetingTimeout: 10000, // 10 seconds greeting timeout
     });
 
     const mailOptions = {
@@ -37,7 +39,13 @@ const sendEmailNotification = async (contactData) => {
       `,
     };
 
-    await transporter.sendMail(mailOptions);
+    // Add timeout wrapper for sendMail
+    const sendMailPromise = transporter.sendMail(mailOptions);
+    const timeoutPromise = new Promise((_, reject) => {
+      setTimeout(() => reject(new Error('Email sending timeout')), 15000); // 15 seconds total timeout
+    });
+
+    await Promise.race([sendMailPromise, timeoutPromise]);
   } catch (error) {
     console.error('Email sending failed:', error.message);
     // Don't fail the request if email fails
@@ -65,8 +73,10 @@ exports.submitContact = async (req, res) => {
 
     await contactMessage.save();
 
-    // Send email notification (optional, non-blocking)
-    await sendEmailNotification(contactMessage);
+    // Send email notification (optional, non-blocking - don't await to avoid blocking response)
+    sendEmailNotification(contactMessage).catch((err) => {
+      console.error('Email notification error (non-blocking):', err.message);
+    });
 
     res.status(201).json({
       message: 'Thank you for your message! I will get back to you soon.',
