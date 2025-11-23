@@ -46,13 +46,20 @@ const Hero = () => {
         <div className="row align-items-center">
           <div className="col-lg-6" data-aos="fade-right">
             <h1
-              className="display-4 fw-bold mb-4"
+              className="fw-bold mb-4"
               style={{
                 textShadow: '0 2px 10px rgba(0,0,0,0.2)',
                 lineHeight: '1.2',
+                fontSize: 'clamp(1.8rem, 4vw, 3.5rem)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                whiteSpace: 'nowrap',
+                gap: '0.4rem',
+                width: '100%',
+                overflow: 'hidden',
               }}
             >
-              <span className="text-white">Hi, I'm </span>
+              <span className="text-white" style={{ whiteSpace: 'nowrap' }}>Hi, I'm </span>
               <span
                 style={{
                   background:
@@ -61,10 +68,11 @@ const Hero = () => {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                   fontWeight: 800,
+                  whiteSpace: 'nowrap',
                 }}
               >
                 Mohd
-              </span>{' '}
+              </span>
               <span
                 style={{
                   background:
@@ -73,11 +81,12 @@ const Hero = () => {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                   fontWeight: 800,
+                  whiteSpace: 'nowrap',
                 }}
               >
                 Ashif
               </span>
-              <span style={{ marginLeft: '10px' }}>👋</span>
+              <span style={{ fontSize: '0.9em', whiteSpace: 'nowrap' }}>👋</span>
             </h1>
             <p
               className="lead mb-3"
@@ -207,6 +216,8 @@ const Hero = () => {
               style={{
                 position: 'relative',
                 display: 'inline-block',
+                width: '100%',
+                maxWidth: '400px',
               }}
             >
               <div
@@ -219,6 +230,8 @@ const Hero = () => {
                   filter: 'blur(15px)',
                   zIndex: 0,
                   animation: 'pulse 3s ease-in-out infinite',
+                  width: 'calc(100% + 20px)',
+                  height: 'calc(100% + 20px)',
                 }}
               ></div>
               <img
@@ -226,9 +239,10 @@ const Hero = () => {
                 alt="Mohd Ashif"
                 className="img-fluid rounded-circle shadow-lg position-relative"
                 style={{
-                  width: '400px',
-                  height: '400px',
-                  maxWidth: '100%',
+                  width: '100%',
+                  maxWidth: '400px',
+                  height: 'auto',
+                  aspectRatio: '1',
                   objectFit: 'cover',
                   border: '4px solid rgba(0, 217, 255, 0.8)',
                   zIndex: 1,

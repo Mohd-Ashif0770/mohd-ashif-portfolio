@@ -7,6 +7,7 @@ const contactController = require('../controllers/contactController');
 const contactValidation = [
   body('name').trim().notEmpty().withMessage('Name is required'),
   body('email')
+    .optional()
     .trim()
     .isEmail()
     .normalizeEmail()

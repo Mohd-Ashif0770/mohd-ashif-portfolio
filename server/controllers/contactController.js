@@ -30,7 +30,7 @@ const sendEmailNotification = async (contactData) => {
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${contactData.name}</p>
-        <p><strong>Email:</strong> ${contactData.email}</p>
+        <p><strong>Email:</strong> ${contactData.email || 'Not provided'}</p>
         <p><strong>Phone:</strong> ${contactData.phone || 'Not provided'}</p>
         <p><strong>Message:</strong></p>
         <p>${contactData.message}</p>
@@ -58,7 +58,7 @@ exports.submitContact = async (req, res) => {
     // Save to database
     const contactMessage = new ContactMessage({
       name,
-      email,
+      email: email || '',
       phone: phone || '',
       message,
     });

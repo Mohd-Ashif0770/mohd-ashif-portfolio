@@ -124,23 +124,41 @@ const ProjectCard = ({ project, gradientColors = ['#00D9FF', '#00FF99'] }) => {
           </div>
 
           {/* Action Buttons */}
-          <div className="d-flex gap-3 mt-auto">
+          <div
+            className="mt-auto project-card-buttons"
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
+              gap: '1rem',
+              flexWrap: 'nowrap',
+              overflow: 'hidden',
+              maxWidth: '100%',
+              minWidth: '260px',
+            }}
+          >
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn d-inline-flex align-items-center gap-2 border-0"
+                className="btn border-0"
                 style={{
                   background: 'linear-gradient(135deg, #00D9FF 0%, #00FF99 100%)',
                   color: '#0E1525',
-                  fontWeight: 600,
+                  fontWeight: 500,
                   borderRadius: '12px',
-                  padding: '12px 24px',
+                  padding: '0.75rem 1.3rem',
                   textDecoration: 'none',
                   transition: 'all 0.3s ease',
                   fontSize: '0.95rem',
                   boxShadow: '0 4px 15px rgba(0, 217, 255, 0.3)',
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  flexShrink: 0,
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.transform = 'translateY(-2px)';
@@ -160,17 +178,22 @@ const ProjectCard = ({ project, gradientColors = ['#00D9FF', '#00FF99'] }) => {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn d-inline-flex align-items-center gap-2"
+                className="btn"
                 style={{
                   background: 'transparent',
                   border: '1.5px solid rgba(255, 255, 255, 0.2)',
                   color: '#C8D1E0',
-                  fontWeight: 600,
+                  fontWeight: 500,
                   borderRadius: '12px',
-                  padding: '12px 24px',
+                  padding: '0.75rem 1.3rem',
                   textDecoration: 'none',
                   transition: 'all 0.3s ease',
                   fontSize: '0.95rem',
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  flexShrink: 0,
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.background = 'rgba(255, 255, 255, 0.1)';

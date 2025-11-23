@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const About = () => {
   const [showMore, setShowMore] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
-  const bioParagraph1 = `I'm **Mohd Ashif**, a passionate Full Stack MERN Developer who loves crafting clean, efficient, and scalable web applications. With a strong foundation in JavaScript, React, Node.js, and MongoDB, I aim to turn ideas into functional, user-friendly digital products.`;
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 992);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-  const bioParagraph2 = `I enjoy solving problems and continuously learning new technologies to stay ahead in the ever-evolving tech world. My goal is to create web experiences that are not only visually appealing but also highly performant and accessible.`;
+  const bioParagraph1 = `I'm Mohd Ashif, a Full Stack MERN Developer who enjoys transforming ideas into fast, intuitive, and scalable web applications. I work with MongoDB, Express.js, React, and Node.js to build products that are clean in design, efficient in performance, and smooth in user experience.`;
+
+  const bioParagraph2 = `I focus on writing maintainable code, implementing secure backends, and crafting responsive UIs that work seamlessly across devices. Through hands-on projects and real industry internship experience, I’ve built features like authentication flows, REST APIs, chat interfaces, and dynamic UI components.`;
+
+  const bioParagraph3 = `I love exploring new technologies, improving existing solutions, and solving real-world problems. My goal is simple: build modern web experiences that look great, perform well, and deliver meaningful value to users.`;
 
   return (
     <section
@@ -59,56 +73,17 @@ const About = () => {
           </span>
         </h2>
 
-        <div className="row align-items-center g-4">
-          {/* Portrait Photo - Left Side */}
-          <div className="col-lg-4 col-md-5" data-aos="fade-right">
+        <div className="row justify-content-center">
+          {/* Main Content Card - Centered */}
+          <div className="col-12" data-aos="fade-up">
             <div
+              className="mx-auto"
               style={{
-                position: 'relative',
-                borderRadius: '24px',
-                padding: '4px',
-                background: 'linear-gradient(135deg, #00D9FF 0%, #B026FF 100%)',
-                boxShadow:
-                  '0 0 30px rgba(0, 217, 255, 0.5), 0 0 60px rgba(176, 38, 255, 0.3)',
-                marginRight: '-20px',
-                zIndex: 2,
-                transform: 'translateX(10px)',
-                height: '300px',
-                width: '300px',
-              }}
-            >
-              <div
-                style={{
-                  borderRadius: '20px',
-                  overflow: 'hidden',
-                  background: 'rgba(10, 10, 26, 0.9)',
-                }}
-              >
-                <img
-                  src="/assets/profile.jpg"
-                  alt="Mohd Ashif"
-                  className="img-fluid "
-                  style={{
-                    display: 'block',
-                    objectFit: 'cover',
-                    height: '290px',
-                    width: '300px',
-                  }}
-                  onError={(e) => {
-                    e.target.src = `https://github.com/Mohd-Ashif0770.png`;
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Main Content Card - Right Side */}
-          <div className="col-lg-8 col-md-7" data-aos="fade-left">
-            <div
-              style={{
+                width: '100%',
+                maxWidth: '750px',
                 background: 'rgba(10, 10, 26, 0.95)',
                 borderRadius: '24px',
-                padding: '40px',
+                padding: isMobile ? '30px 20px' : '40px',
                 border: '2px solid transparent',
                 backgroundImage:
                   'linear-gradient(rgba(10, 10, 26, 0.95), rgba(10, 10, 26, 0.95)), linear-gradient(135deg, #00D9FF 0%, #B026FF 100%)',
@@ -123,7 +98,7 @@ const About = () => {
               <div
                 style={{
                   color: 'white',
-                  fontSize: '1.1rem',
+                  fontSize: isMobile ? '1rem' : '1.1rem',
                   lineHeight: '1.8',
                   marginBottom: '1.2rem',
                 }}
@@ -151,45 +126,60 @@ const About = () => {
               <div
                 style={{
                   color: 'white',
-                  fontSize: '1.1rem',
+                  fontSize: isMobile ? '1rem' : '1.1rem',
                   lineHeight: '1.8',
                   marginTop: '1.2rem',
-                  marginBottom: '30px',
+                  marginBottom: '1.2rem',
                 }}
               >
                 {bioParagraph2}
               </div>
 
-              <a
-                href="/assets/Resume.pdf"
-                download="Mohd-Ashif-Resume.pdf"
-                className="btn border-0 d-inline-flex align-items-center gap-2"
+              {/* Third Paragraph */}
+              <div
                 style={{
-                  background:
-                    'linear-gradient(135deg, #00D9FF 0%, #B026FF 100%)',
                   color: 'white',
-                  fontWeight: 700,
-                  borderRadius: '12px',
-                  padding: '14px 28px',
-                  fontSize: '1rem',
-                  textDecoration: 'none',
-                  boxShadow: '0 8px 20px rgba(0, 217, 255, 0.4)',
-                  transition: 'all 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = 'translateY(-2px)';
-                  e.target.style.boxShadow =
-                    '0 12px 30px rgba(0, 217, 255, 0.6)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow =
-                    '0 8px 20px rgba(0, 217, 255, 0.4)';
+                  fontSize: isMobile ? '1rem' : '1.1rem',
+                  lineHeight: '1.8',
+                  marginTop: '1.2rem',
+                  marginBottom: '30px',
                 }}
               >
-                <i className="fas fa-download"></i>
-                Download Resume
-              </a>
+                {bioParagraph3}
+              </div>
+
+              <div style={{ textAlign: 'center', width: '100%' }}>
+                <a
+                  href="/assets/Resume.pdf"
+                  download="Mohd-Ashif-Resume.pdf"
+                  className="btn border-0 d-inline-flex align-items-center gap-2"
+                  style={{
+                    background:
+                      'linear-gradient(135deg, #00D9FF 0%, #B026FF 100%)',
+                    color: 'white',
+                    fontWeight: 700,
+                    borderRadius: '12px',
+                    padding: '14px 28px',
+                    fontSize: '1rem',
+                    textDecoration: 'none',
+                    boxShadow: '0 8px 20px rgba(0, 217, 255, 0.4)',
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow =
+                      '0 12px 30px rgba(0, 217, 255, 0.6)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow =
+                      '0 8px 20px rgba(0, 217, 255, 0.4)';
+                  }}
+                >
+                  <i className="fas fa-download"></i>
+                  Download Resume
+                </a>
+              </div>
             </div>
           </div>
         </div>
