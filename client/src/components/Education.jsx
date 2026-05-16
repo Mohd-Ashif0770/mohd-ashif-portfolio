@@ -1,5 +1,9 @@
 import React from 'react';
 
+const BORDER_COLOR = 'rgba(90, 0, 255, 0.5)';
+const BORDER_COLOR_HOVER = 'rgba(0, 153, 255, 0.8)';
+const SHADOW_COLOR = 'rgba(90, 0, 255, 0.3)';
+
 const Education = () => {
   const educationItems = [
     {
@@ -14,9 +18,9 @@ const Education = () => {
       id: 2,
       degree: 'Full Stack Web Development Course',
       institution: 'EasySkill Career Academy, Surat',
-      duration: '2025 – Ongoing',
+      duration: 'Completed in 2025',
       icon: 'fas fa-book-open',
-      status: 'Ongoing',
+      status: 'Completed',
     },
     {
       id: 3,
@@ -32,20 +36,12 @@ const Education = () => {
     <section
       id="education"
       className="pt-5 unified-bg section-spacing"
-      style={{
-        position: 'relative',
-        paddingTop: '10rem',
-        // paddingBottom: '10rem',
-      }}
+      style={{ position: 'relative', paddingTop: '10rem' }}
     >
       <div className="container">
         <h2
           className="text-center mb-5 fw-bold text-white"
-          data-aos="fade-up"
           style={{
-            textShadow: '0 2px 10px rgba(0,0,0,0.2)',
-            position: 'relative',
-            display: 'inline-block',
             width: '100%',
             fontSize: 'clamp(2.4rem, 5vw, 3rem)',
             fontWeight: 800,
@@ -73,16 +69,12 @@ const Education = () => {
               margin: '10px auto 0',
               borderRadius: '2px',
             }}
-          ></span>
+          />
         </h2>
+
         <div className="row g-4">
-          {educationItems.map((item, index) => (
-            <div
-              key={item.id}
-              className="col-lg-4 col-md-6 col-sm-12"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
+          {educationItems.map((item) => (
+            <div key={item.id} className="col-lg-4 col-md-6 col-sm-12">
               <div
                 className="card h-100 border-0 shadow-lg"
                 style={{
@@ -90,47 +82,22 @@ const Education = () => {
                   backdropFilter: 'blur(10px)',
                   borderRadius: '24px',
                   padding: '30px',
-                  border: '2px solid rgba(90, 0, 255, 0.5)',
-                  transition: 'all 0.3s ease',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  boxShadow:
-                    '0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(90, 0, 255, 0.1)',
+                  border: `2px solid ${BORDER_COLOR}`,
+                  transition:
+                    'transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease',
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-10px)';
-                  e.currentTarget.style.boxShadow =
-                    '0 20px 40px rgba(90, 0, 255, 0.4), 0 0 30px rgba(0, 153, 255, 0.3)';
-                  e.currentTarget.style.borderColor = 'rgba(0, 153, 255, 0.8)';
-                  const glow = e.currentTarget.querySelector('.card-glow');
-                  if (glow) glow.style.opacity = '1';
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = `0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px ${SHADOW_COLOR}`;
+                  e.currentTarget.style.borderColor = BORDER_COLOR_HOVER;
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow =
-                    '0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(90, 0, 255, 0.1)';
-                  e.currentTarget.style.borderColor = 'rgba(90, 0, 255, 0.5)';
-                  const glow = e.currentTarget.querySelector('.card-glow');
-                  if (glow) glow.style.opacity = '0';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+                  e.currentTarget.style.borderColor = BORDER_COLOR;
                 }}
               >
-                {/* Neon border glow effect */}
-                <div
-                  className="card-glow"
-                  style={{
-                    position: 'absolute',
-                    inset: '-2px',
-                    borderRadius: '24px',
-                    background:
-                      'linear-gradient(135deg, rgba(90, 0, 255, 0.6), rgba(0, 153, 255, 0.6))',
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease',
-                    zIndex: -1,
-                    filter: 'blur(8px)',
-                  }}
-                ></div>
-
-                {/* Icon with gradient background */}
                 <div className="text-center mb-4">
                   <div
                     style={{
@@ -147,41 +114,39 @@ const Education = () => {
                       boxShadow: '0 8px 20px rgba(90, 0, 255, 0.3)',
                     }}
                   >
-                    <i className={`${item.icon} fa-2x`}></i>
+                    <i className={`${item.icon} fa-2x`} />
                   </div>
                 </div>
 
-                {/* Degree/Title */}
                 <h4
                   className="text-center mb-3"
                   style={{
                     color: '#E0E6F0',
                     fontWeight: 700,
                     fontSize: '1.25rem',
-                    lineHeight: '1.4',
+                    lineHeight: 1.4,
                   }}
                 >
                   {item.degree}
                 </h4>
 
-                {/* Institution */}
                 <p
                   className="text-center mb-3"
                   style={{
                     color: '#B8C5D6',
                     fontSize: '0.95rem',
-                    lineHeight: '1.6',
+                    lineHeight: 1.6,
                     marginBottom: '15px',
                   }}
                 >
                   <i
                     className="fas fa-university me-2"
                     style={{ color: '#0099FF' }}
-                  ></i>
+                    aria-hidden="true"
+                  />
                   {item.institution}
                 </p>
 
-                {/* Duration and Status */}
                 <div className="d-flex justify-content-between align-items-center">
                   <div
                     style={{
@@ -193,7 +158,8 @@ const Education = () => {
                     <i
                       className="fas fa-calendar-alt me-2"
                       style={{ color: '#0099FF' }}
-                    ></i>
+                      aria-hidden="true"
+                    />
                     {item.duration}
                   </div>
                   <span

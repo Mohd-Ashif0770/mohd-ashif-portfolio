@@ -70,7 +70,6 @@ const Projects = () => {
       <div className="container">
         <h2
           className="text-center mb-5 fw-bold"
-          data-aos="fade-up"
           style={{
             fontSize: '3rem',
             fontWeight: 800,
