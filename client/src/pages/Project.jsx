@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { projectAPI } from '../utils/apiService';
+import { getProjectByIdOrSlug } from '../data/projectsData';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -14,18 +14,16 @@ const Project = () => {
     fetchProject();
   }, [id]);
 
-  const fetchProject = async () => {
-    try {
-      setLoading(true);
-      const response = await projectAPI.getById(id);
-      setProject(response.data);
+  const fetchProject = () => {
+    setLoading(true);
+    const foundProject = getProjectByIdOrSlug(id);
+    if (foundProject) {
+      setProject(foundProject);
       setError(null);
-    } catch (err) {
+    } else {
       setError('Project not found');
-      console.error('Error fetching project:', err);
-    } finally {
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   if (loading) {
