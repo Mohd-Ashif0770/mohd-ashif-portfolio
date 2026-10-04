@@ -103,7 +103,9 @@ const ProjectCard = ({ project, gradientColors = ['#00D9FF', '#00FF99'] }) => {
               justifyContent: 'flex-start',
               gap: '1rem',
               flexWrap: 'nowrap',
-              overflow: 'hidden',
+              overflow: 'visible',
+              paddingTop: '8px',
+              paddingBottom: '4px',
               maxWidth: '100%',
               minWidth: '260px',
             }}
@@ -115,28 +117,39 @@ const ProjectCard = ({ project, gradientColors = ['#00D9FF', '#00FF99'] }) => {
                 rel="noopener noreferrer"
                 className="btn border-0"
                 style={{
-                  background: 'linear-gradient(135deg, #00D9FF 0%, #00FF99 100%)',
-                  color: '#0E1525',
+                  background: 'linear-gradient(135deg, #00D9FF 0%, #0088FF 50%, #7928CA 100%)',
+                  color: '#ffffff',
                   fontWeight: 500,
                   borderRadius: '12px',
-                  padding: '0.75rem 1.3rem',
+                  padding: '0.75rem 1.4rem',
                   textDecoration: 'none',
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.25s ease-in-out',
                   fontSize: '0.95rem',
-                  boxShadow: '0 4px 15px rgba(0, 217, 255, 0.3)',
+                  boxShadow: '0 4px 15px rgba(0, 217, 255, 0.35)',
                   whiteSpace: 'nowrap',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem',
                   flexShrink: 0,
+                  cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 217, 255, 0.5)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 217, 255, 0.55), 0 0 15px rgba(121, 40, 202, 0.35)';
+                  e.currentTarget.style.filter = 'brightness(1.08)';
+                  e.currentTarget.style.color = '#ffffff';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 217, 255, 0.3)';
+                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 217, 255, 0.35)';
+                  e.currentTarget.style.filter = 'brightness(1)';
+                  e.currentTarget.style.color = '#ffffff';
+                }}
+                onMouseDown={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(0.98)';
+                }}
+                onMouseUp={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
               >
                 <i className="fas fa-external-link-alt" aria-hidden="true" />
@@ -155,25 +168,34 @@ const ProjectCard = ({ project, gradientColors = ['#00D9FF', '#00FF99'] }) => {
                   color: '#C8D1E0',
                   fontWeight: 500,
                   borderRadius: '12px',
-                  padding: '0.75rem 1.3rem',
+                  padding: '0.75rem 1.4rem',
                   textDecoration: 'none',
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.25s ease-in-out',
                   fontSize: '0.95rem',
                   whiteSpace: 'nowrap',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem',
                   flexShrink: 0,
+                  cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.45)';
                   e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'transparent';
                   e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
                   e.currentTarget.style.color = '#C8D1E0';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+                onMouseDown={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(0.98)';
+                }}
+                onMouseUp={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
               >
                 <i className="fab fa-github" aria-hidden="true" />

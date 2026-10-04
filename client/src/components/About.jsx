@@ -152,32 +152,44 @@ const About = () => {
                 <a
                   href="/assets/Resume.pdf"
                   download="Mohd-Ashif-Resume.pdf"
-                  className="btn border-0 d-inline-flex align-items-center gap-2"
+                  className="btn border-0 d-inline-flex align-items-center gap-2 position-relative overflow-hidden"
                   style={{
                     background:
-                      "linear-gradient(135deg, #00D9FF 0%, #B026FF 100%)",
-                    color: "white",
+                      "linear-gradient(135deg, #00D9FF 0%, #B026FF 50%, #FF6BFF 100%)",
+                    color: "#ffffff",
                     fontWeight: 700,
-                    borderRadius: "12px",
-                    padding: "14px 28px",
-                    fontSize: "1rem",
+                    borderRadius: "14px",
+                    padding: "14px 32px",
+                    fontSize: "1.05rem",
+                    letterSpacing: "0.5px",
                     textDecoration: "none",
-                    boxShadow: "0 8px 20px rgba(0, 217, 255, 0.4)",
-                    transition: "all 0.3s ease",
+                    boxShadow:
+                      "0 10px 25px -5px rgba(0, 217, 255, 0.5), 0 8px 20px -6px rgba(176, 38, 255, 0.4)",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    cursor: "pointer",
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.transform = "translateY(-2px)";
-                    e.target.style.boxShadow =
-                      "0 12px 30px rgba(0, 217, 255, 0.6)";
+                    e.currentTarget.style.transform =
+                      "translateY(-4px) scale(1.02)";
+                    e.currentTarget.style.boxShadow =
+                      "0 15px 35px -5px rgba(0, 217, 255, 0.7), 0 12px 25px -5px rgba(255, 107, 255, 0.6)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.transform = "translateY(0)";
-                    e.target.style.boxShadow =
-                      "0 8px 20px rgba(0, 217, 255, 0.4)";
+                    e.currentTarget.style.transform = "translateY(0) scale(1)";
+                    e.currentTarget.style.boxShadow =
+                      "0 10px 25px -5px rgba(0, 217, 255, 0.5), 0 8px 20px -6px rgba(176, 38, 255, 0.4)";
+                  }}
+                  onMouseDown={(e) => {
+                    e.currentTarget.style.transform =
+                      "translateY(-1px) scale(0.98)";
+                  }}
+                  onMouseUp={(e) => {
+                    e.currentTarget.style.transform =
+                      "translateY(-4px) scale(1.02)";
                   }}
                 >
-                  <i className="fas fa-download"></i>
-                  Download Resume
+                  <i className="fas fa-download me-1"></i>
+                  <span>Download Resume</span>
                 </a>
               </div>
             </div>

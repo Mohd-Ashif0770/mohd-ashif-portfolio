@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { getProjectByIdOrSlug } from '../data/projectsData';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import NotFound from './NotFound';
 
 const Project = () => {
   const { id } = useParams();
@@ -57,45 +58,7 @@ const Project = () => {
   }
 
   if (error || !project) {
-    return (
-      <>
-        <Navbar />
-        <div
-          className="container text-center py-5 min-vh-100 d-flex flex-column align-items-center justify-content-center"
-          style={{
-            marginTop: '80px',
-            background: 'linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%)',
-          }}
-        >
-          <h2
-            style={{
-              background: 'linear-gradient(135deg, #5A00FF, #0099FF)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
-            Project Not Found
-          </h2>
-          <p className="text-muted mb-4">
-            {error || 'The project you are looking for does not exist.'}
-          </p>
-          <Link
-            to="/"
-            className="btn"
-            style={{
-              background: 'linear-gradient(135deg, #5A00FF, #0099FF)',
-              border: 'none',
-              color: 'white',
-              fontWeight: 600,
-            }}
-          >
-            Back to Home
-          </Link>
-        </div>
-        <Footer />
-      </>
-    );
+    return <NotFound />;
   }
 
   return (

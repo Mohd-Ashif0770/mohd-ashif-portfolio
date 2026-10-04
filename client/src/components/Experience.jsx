@@ -18,7 +18,7 @@ const experiences = [
   },
   {
     id: 2,
-    role: "MERN Stack Developer",
+    role: "Junior MERN Stack Developer",
     company: "Costa Technolab, Surat",
     duration: "Jan 2026 – Aug 2026",
     isCurrent: false,
