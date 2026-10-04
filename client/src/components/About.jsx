@@ -15,12 +15,12 @@ const About = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const bioParagraph1 = `I’m Mohd Ashif, a Full Stack MERN Developer who enjoys building scalable and user-friendly web applications using React.js, Next.js, Node.js, Express.js, and MongoDB. I focus on creating clean UIs, secure backends, and efficient full-stack solutions with modern development practices.`;
+  const bioParagraph1 = `I’m Mohd Ashif, a Full Stack MERN Developer who enjoys building scalable, user-friendly web applications with React.js, Node.js, Express.js, and MongoDB. I focus on clean UIs, secure backends, and efficient full-stack solutions built with modern development practices.`;
 
-  const bioParagraph2 = `Currently, I work as a MERN Stack Developer at Costa Technolab, where I build full-stack applications, REST APIs, authentication systems, payment integrations, and real-time features using technologies like Prisma, Stripe, Cloudinary, Socket.IO, and Tailwind CSS. I also completed my MERN Stack internship at Omizo Technologies, working on real-world full-stack projects.`;
+  const bioParagraph2 = `I currently work as a MERN Stack Developer at DelightCode Infotech, where I resolve production issues and ship new features across the stack. Previously at Costa Technolab, I built full-stack applications, REST APIs, authentication systems, and real-time features. As my current company is closing its operations, I'm looking for a stable, long-term role where I can keep growing.`;
 
-  const bioParagraph3 = `I also enjoy building personal projects like DeltaGPT, an AI chatbot built with the MERN stack and OpenAI integration. I’m passionate about learning new technologies, improving my problem-solving skills, and creating modern web experiences that deliver real value to users.`;
-
+  const bioParagraph3 = `Beyond work, I enjoy building personal projects like DeltaGPT, an AI chatbot built with the MERN stack and OpenAI integration. I'm passionate about learning new technologies, sharpening my problem-solving skills, and creating modern web experiences that deliver real value to users.`;
+ 
   return (
     <section
       id="about"

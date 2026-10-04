@@ -1,33 +1,32 @@
-import React from 'react';
+import React from "react";
 
-const GRADIENT = 'linear-gradient(135deg, #00D9FF 0%, #B026FF 100%)';
+const GRADIENT = "linear-gradient(135deg, #00D9FF 0%, #B026FF 100%)";
 
 const experiences = [
   {
     id: 1,
-    role: 'MERN Stack Developer',
-    company: 'Costa Technolab, Surat',
-    duration: 'Jan 2026 – Present',
+    role: "MERN Stack Developer",
+    company: "DelightCode Infotech, Surat",
+    duration: "Aug 2026 – Present",
     isCurrent: true,
-    icon: 'fas fa-briefcase',
+    icon: "fas fa-briefcase",
     highlights: [
-      'Developed full-stack MERN applications using React.js, Node.js, Express.js, and MongoDB',
-      'Built scalable REST APIs for booking systems, shipping workflows, and admin dashboards',
-      'Implemented authentication, payments, real-time messaging, and media uploads',
-      'Worked with Prisma ORM, MySQL, Stripe, Cloudinary, Socket.IO, and Tailwind CSS',
+      "Identified and resolved production bugs in a live application",
+      "Delivered new features and enhancements using React.js, Node.js, and MongoDB",
+      "Tested fixes and application changes across different environments",
     ],
   },
   {
     id: 2,
-    role: 'MERN Stack Intern',
-    company: 'Omizo Technologies, Surat',
-    duration: 'Oct 2025 – Jan 2026',
+    role: "MERN Stack Developer",
+    company: "Costa Technolab, Surat",
+    duration: "Jan 2026 – Aug 2026",
     isCurrent: false,
-    icon: 'fas fa-laptop-code',
+    icon: "fas fa-laptop-code",
     highlights: [
-      'Built and tested REST APIs using Node.js, Express.js, MongoDB, and Postman',
-      'Improved frontend responsiveness and integrated backend APIs',
-      'Collaborated on real-world full-stack development projects',
+      "Developed full-stack MERN applications using React.js, Node.js, Express.js, and MongoDB",
+      "Built scalable REST APIs for booking systems, shipping workflows, and admin dashboards",
+      "Implemented authentication, payments, real-time messaging, and media uploads",
     ],
   },
 ];
@@ -37,20 +36,20 @@ const Experience = () => {
     <section
       id="experience"
       className="pt-5 unified-bg section-spacing"
-      style={{ position: 'relative' }}
+      style={{ position: "relative" }}
       aria-labelledby="experience-heading"
     >
       <div
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
           opacity: 0.05,
           backgroundImage:
-            'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)',
-          pointerEvents: 'none',
+            "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)",
+          pointerEvents: "none",
         }}
       />
 
@@ -60,39 +59,28 @@ const Experience = () => {
             id="experience-heading"
             className="fw-bold text-white mb-0"
             style={{
-              fontSize: 'clamp(2.4rem, 5vw, 3rem)',
+              fontSize: "clamp(2.4rem, 5vw, 3rem)",
               fontWeight: 800,
-              letterSpacing: '-0.5px',
+              letterSpacing: "-0.5px",
             }}
           >
-            <span style={{ color: '#FFFFFF' }}>Work </span>
+            <span style={{ color: "#FFFFFF" }}>Work </span>
             <span
               style={{
                 background: GRADIENT,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
               }}
             >
               Experience
             </span>
           </h2>
-          <span
-            aria-hidden="true"
-            style={{
-              display: 'block',
-              width: '80px',
-              height: '4px',
-              background: GRADIENT,
-              margin: '10px auto 0',
-              borderRadius: '2px',
-            }}
-          />
         </header>
 
         <ol
           className="experience-timeline list-unstyled mb-0 mx-auto"
-          style={{ maxWidth: '820px', padding: 0 }}
+          style={{ maxWidth: "820px", padding: 0 }}
         >
           {experiences.map((item, index) => (
             <li
@@ -106,7 +94,7 @@ const Experience = () => {
                 aria-hidden="true"
                 style={{
                   outline: item.isCurrent
-                    ? '3px solid rgba(0, 217, 255, 0.35)'
+                    ? "3px solid rgba(0, 217, 255, 0.35)"
                     : undefined,
                 }}
               >
@@ -116,26 +104,26 @@ const Experience = () => {
               <article
                 className="experience-card"
                 style={{
-                  background: 'rgba(10, 10, 26, 0.95)',
-                  borderRadius: '20px',
-                  padding: 'clamp(1.25rem, 3vw, 1.75rem)',
-                  border: '2px solid transparent',
+                  background: "rgba(10, 10, 26, 0.95)",
+                  borderRadius: "20px",
+                  padding: "clamp(1.25rem, 3vw, 1.75rem)",
+                  border: "2px solid transparent",
                   backgroundImage: `linear-gradient(rgba(10, 10, 26, 0.95), rgba(10, 10, 26, 0.95)), ${GRADIENT}`,
-                  backgroundOrigin: 'border-box',
-                  backgroundClip: 'padding-box, border-box',
+                  backgroundOrigin: "border-box",
+                  backgroundClip: "padding-box, border-box",
                   boxShadow:
-                    '0 0 30px rgba(0, 217, 255, 0.15), 0 0 50px rgba(176, 38, 255, 0.1), 0 12px 40px rgba(0, 0, 0, 0.4)',
-                  transition: 'transform 0.35s ease, box-shadow 0.35s ease',
+                    "0 0 30px rgba(0, 217, 255, 0.15), 0 0 50px rgba(176, 38, 255, 0.1), 0 12px 40px rgba(0, 0, 0, 0.4)",
+                  transition: "transform 0.35s ease, box-shadow 0.35s ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.transform = "translateY(-6px)";
                   e.currentTarget.style.boxShadow =
-                    '0 0 40px rgba(0, 217, 255, 0.35), 0 0 60px rgba(176, 38, 255, 0.25), 0 20px 50px rgba(0, 0, 0, 0.5)';
+                    "0 0 40px rgba(0, 217, 255, 0.35), 0 0 60px rgba(176, 38, 255, 0.25), 0 20px 50px rgba(0, 0, 0, 0.5)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.transform = "translateY(0)";
                   e.currentTarget.style.boxShadow =
-                    '0 0 30px rgba(0, 217, 255, 0.15), 0 0 50px rgba(176, 38, 255, 0.1), 0 12px 40px rgba(0, 0, 0, 0.4)';
+                    "0 0 30px rgba(0, 217, 255, 0.15), 0 0 50px rgba(176, 38, 255, 0.1), 0 12px 40px rgba(0, 0, 0, 0.4)";
                 }}
               >
                 <header className="mb-3">
@@ -143,9 +131,9 @@ const Experience = () => {
                     <h3
                       className="mb-0"
                       style={{
-                        color: '#FFFFFF',
+                        color: "#FFFFFF",
                         fontWeight: 700,
-                        fontSize: 'clamp(1.15rem, 2.5vw, 1.35rem)',
+                        fontSize: "clamp(1.15rem, 2.5vw, 1.35rem)",
                         lineHeight: 1.35,
                       }}
                     >
@@ -156,13 +144,13 @@ const Experience = () => {
                         className="badge flex-shrink-0"
                         style={{
                           background:
-                            'linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(176, 38, 255, 0.3))',
-                          color: '#00D9FF',
-                          border: '1px solid rgba(0, 217, 255, 0.5)',
-                          borderRadius: '12px',
-                          fontSize: '0.8rem',
+                            "linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(176, 38, 255, 0.3))",
+                          color: "#00D9FF",
+                          border: "1px solid rgba(0, 217, 255, 0.5)",
+                          borderRadius: "12px",
+                          fontSize: "0.8rem",
                           fontWeight: 600,
-                          padding: '6px 12px',
+                          padding: "6px 12px",
                         }}
                       >
                         Present
@@ -172,10 +160,10 @@ const Experience = () => {
                   <p
                     className="mb-2"
                     style={{
-                      color: '#00D9FF',
-                      fontSize: '0.95rem',
+                      color: "#00D9FF",
+                      fontSize: "0.95rem",
                       fontWeight: 600,
-                      marginBottom: '0.5rem',
+                      marginBottom: "0.5rem",
                     }}
                   >
                     <i className="fas fa-building me-2" aria-hidden="true" />
@@ -183,14 +171,14 @@ const Experience = () => {
                   </p>
                   <time
                     style={{
-                      color: '#B8C5D6',
-                      fontSize: '0.9rem',
+                      color: "#B8C5D6",
+                      fontSize: "0.9rem",
                       fontWeight: 500,
                     }}
                   >
                     <i
                       className="fas fa-calendar-alt me-2"
-                      style={{ color: '#B026FF' }}
+                      style={{ color: "#B026FF" }}
                       aria-hidden="true"
                     />
                     {item.duration}
@@ -200,8 +188,8 @@ const Experience = () => {
                 <ul
                   className="mb-0 ps-3"
                   style={{
-                    color: '#E0E6F0',
-                    fontSize: 'clamp(0.9rem, 2vw, 1rem)',
+                    color: "#E0E6F0",
+                    fontSize: "clamp(0.9rem, 2vw, 1rem)",
                     lineHeight: 1.75,
                   }}
                 >

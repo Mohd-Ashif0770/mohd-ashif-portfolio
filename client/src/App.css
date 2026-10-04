@@ -10,11 +10,19 @@ section {
 
 /* Gradient background utilities */
 .gradient-bg-primary {
-  background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-gradient-start) 0%,
+    var(--primary-gradient-end) 100%
+  );
 }
 
 .gradient-bg-secondary {
-  background: linear-gradient(135deg, var(--secondary-gradient-start) 0%, var(--secondary-gradient-end) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--secondary-gradient-start) 0%,
+    var(--secondary-gradient-end) 100%
+  );
 }
 
 .gradient-bg-light {
@@ -22,7 +30,11 @@ section {
 }
 
 .gradient-bg-dark {
-  background: linear-gradient(135deg, var(--dark-gradient-start) 0%, var(--dark-gradient-end) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--dark-gradient-start) 0%,
+    var(--dark-gradient-end) 100%
+  );
 }
 
 /* Smooth transitions */
@@ -32,7 +44,11 @@ section {
 
 /* Button hover effects with gradients */
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+  background: linear-gradient(
+    135deg,
+    var(--primary-gradient-start),
+    var(--primary-gradient-end)
+  );
   border: none;
   transition: all 0.3s ease;
 }
@@ -40,7 +56,157 @@ section {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(90, 0, 255, 0.4);
-  background: linear-gradient(135deg, var(--primary-gradient-end), var(--primary-gradient-start));
+  background: linear-gradient(
+    135deg,
+    var(--primary-gradient-end),
+    var(--primary-gradient-start)
+  );
+}
+
+/* Hero CTA Buttons & Social Links */
+.hero-btn-primary {
+  background-color: #0072ff;
+  color: #ffffff !important;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  border-radius: 10px;
+  padding: 12px 28px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn-primary:hover {
+  background-color: #005fdf;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 114, 255, 0.45);
+}
+
+.hero-btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 114, 255, 0.3);
+}
+
+.hero-btn-primary i {
+  transition: transform 0.25s ease;
+}
+
+.hero-btn-primary:hover i {
+  transform: translateY(2px);
+}
+
+.hero-btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff !important;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  border-radius: 10px;
+  padding: 12px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #0072ff;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 114, 255, 0.2);
+}
+
+.hero-btn-secondary:active {
+  transform: translateY(-1px);
+}
+
+.hero-btn-secondary i {
+  transition: transform 0.3s ease;
+}
+
+.hero-btn-secondary:hover i {
+  transform: translateY(2px);
+}
+
+/* Hero Social Links */
+.hero-social-link {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-social-link:hover {
+  transform: translateY(-3px) scale(1.08);
+  background: rgba(0, 217, 255, 0.15);
+  border-color: #00d9ff;
+  color: #00d9ff;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+}
+
+/* Navbar Styling & Visibility */
+.custom-navbar {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  padding: 16px 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1030;
+}
+
+.custom-navbar.scrolled {
+  padding: 10px 0;
+  background: rgba(15, 23, 42, 0.92) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  border-bottom-color: rgba(0, 217, 255, 0.15);
+}
+
+.nav-brand-logo {
+  font-size: 1.4rem;
+  letter-spacing: -0.2px;
+  background: linear-gradient(135deg, #00d9ff 0%, #0072ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+
+.nav-link-custom {
+  color: rgba(241, 245, 249, 0.85) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px !important;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-link-custom:hover {
+  color: #00d9ff !important;
+  background: rgba(0, 217, 255, 0.08);
+}
+
+.nav-link-custom.active-nav-link {
+  color: #00d9ff !important;
+  font-weight: 600;
+  background: rgba(0, 217, 255, 0.12);
 }
 
 /* Card hover effects */

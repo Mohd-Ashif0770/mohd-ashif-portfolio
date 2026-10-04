@@ -104,35 +104,20 @@ const Hero = () => {
             </p>
             <div className="d-flex gap-3 mb-4 flex-wrap align-items-center">
               <button
-                className="btn btn-lg border-0"
+                className="btn hero-btn-primary d-inline-flex align-items-center gap-2"
                 onClick={scrollToProjects}
-                style={{
-                  background:
-                    "linear-gradient(135deg, #00D9FF 0%, #00FF99 100%)",
-                  color: "#1a1a2e",
-                  fontWeight: 700,
-                  borderRadius: "10px",
-                  padding: "12px 30px",
-                  boxShadow: "0 8px 20px rgba(0, 217, 255, 0.4)",
-                  transition: "all 0.3s ease",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = "translateY(-2px)";
-                  e.target.style.boxShadow =
-                    "0 12px 30px rgba(0, 217, 255, 0.6)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = "translateY(0)";
-                  e.target.style.boxShadow =
-                    "0 8px 20px rgba(0, 217, 255, 0.4)";
-                }}
               >
-                View My Work
+                <span>View My Work</span>
                 <i className="fas fa-arrow-down"></i>
               </button>
+              <a
+                href="/assets/Resume.pdf"
+                download="Mohd-Ashif-Resume.pdf"
+                className="btn hero-btn-secondary d-inline-flex align-items-center gap-2"
+              >
+                <span>Download Resume</span>
+                <i className="fas fa-download"></i>
+              </a>
             </div>
             <div className="d-flex gap-3">
               <a
@@ -140,32 +125,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                style={{
-                  width: "50px",
-                  height: "50px",
-                  borderRadius: "50%",
-                  border: "2px solid white",
-                  background: "transparent",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "white",
-                  fontSize: "1.5rem",
-                  transition: "all 0.3s ease",
-                  textDecoration: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = "scale(1.1)";
-                  e.target.style.background = "rgba(255, 255, 255, 0.1)";
-                  e.target.style.borderColor = "#00D9FF";
-                  e.target.style.boxShadow = "0 0 20px rgba(0, 217, 255, 0.5)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = "scale(1)";
-                  e.target.style.background = "transparent";
-                  e.target.style.borderColor = "white";
-                  e.target.style.boxShadow = "none";
-                }}
+                className="hero-social-link"
               >
                 <i className="fab fa-github"></i>
               </a>
@@ -174,32 +134,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                style={{
-                  width: "50px",
-                  height: "50px",
-                  borderRadius: "50%",
-                  border: "2px solid white",
-                  background: "transparent",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "white",
-                  fontSize: "1.5rem",
-                  transition: "all 0.3s ease",
-                  textDecoration: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = "scale(1.1)";
-                  e.target.style.background = "rgba(255, 255, 255, 0.1)";
-                  e.target.style.borderColor = "#00D9FF";
-                  e.target.style.boxShadow = "0 0 20px rgba(0, 217, 255, 0.5)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = "scale(1)";
-                  e.target.style.background = "transparent";
-                  e.target.style.borderColor = "white";
-                  e.target.style.boxShadow = "none";
-                }}
+                className="hero-social-link"
               >
                 <i className="fab fa-linkedin"></i>
               </a>

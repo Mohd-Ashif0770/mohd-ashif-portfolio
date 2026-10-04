@@ -49,27 +49,17 @@ const Education = () => {
             marginBottom: '2.5rem',
           }}
         >
+           <span className="text-white">Education&nbsp; &amp; &nbsp;</span>
           <span
             style={{
-              background: 'linear-gradient(135deg, #5A00FF, #0099FF)',
+              background: 'linear-gradient(135deg, #00D9FF 0%, #B026FF 50%, #FF6BFF 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              display: 'block',
             }}
           >
-            Education
+             Certifications
           </span>
-          <span
-            style={{
-              display: 'block',
-              width: '80px',
-              height: '4px',
-              background: 'linear-gradient(135deg, #5A00FF, #0099FF)',
-              margin: '10px auto 0',
-              borderRadius: '2px',
-            }}
-          />
         </h2>
 
         <div className="row g-4">
