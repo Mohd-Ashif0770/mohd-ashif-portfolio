@@ -42,7 +42,7 @@ const Skills = () => {
       borderColor: "rgba(0, 153, 255, 0.5)",
       borderColorHover: "rgba(20, 184, 166, 0.8)",
       shadowColor: "rgba(0, 153, 255, 0.3)",
-      skills: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Mongoose", "Prisma"],
+      skills: ["MongoDB", "MySQL", "Redis", "Mongoose", "Prisma"],
     },
     {
       title: "Tools & Platforms",
