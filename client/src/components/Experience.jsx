@@ -18,13 +18,13 @@ const experiences = [
   },
   {
     id: 2,
-    role: "Junior MERN Stack Developer",
+    role: "Junior Full Stack Developer",
     company: "Costa Technolab, Surat",
-    duration: "Jan 2026 – Aug 2026",
+    duration: "Sep 2025 – Aug 2026",
     isCurrent: false,
     icon: "fas fa-laptop-code",
     highlights: [
-      "Developed full-stack MERN applications using React.js, Node.js, Express.js, and MongoDB",
+      "Developed full-stack applications using React.js, Node.js, Express.js, MongoDB and MySQL",
       "Built scalable REST APIs for booking systems, shipping workflows, and admin dashboards",
       "Implemented authentication, payments, real-time messaging, and media uploads",
     ],
